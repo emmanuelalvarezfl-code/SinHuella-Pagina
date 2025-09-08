@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>SIN HUELLA · Limpieza consciente</title>
+  <meta name="description" content="Esponja Jabón 2 en 1 ecológica y merchandising SIN HUELLA. Misión, visión y valores orientados a la sostenibilidad." />
+
+  <style>
+    /* ===== Paleta (imagen adjunta) ===== */
+    :root{
+      --g1:#9ED67C;   /* verde claro */
+      --g2:#7EB658;   /* verde medio */
+      --g3:#19834B;   /* verde profundo */
+      --g4:#304D02;   /* verde oscuro */
+      --y1:#EDD877;   /* amarillo suave */
+      --p1:#FBFAF5;   /* marfil / fondo claro */
+      --c1:#C0E2E4;   /* celeste claro */
+      --c2:#94D1D9;   /* celeste medio */
+
+      --ink:#263238;      /* texto principal */
+      --muted:#5f6b73;    /* texto secundario */
+      --line:#e6ece8;     /* bordes */
+      --max:1160px;
+      --radius:16px;
+      --shadow:0 16px 30px rgba(0,0,0,.06);
+    }
+
+    /* ===== Base ===== */
+    *{box-sizing:border-box}
+    html,body{margin:0}
+    body{
+      font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+      color:var(--ink);
+      background:linear-gradient(180deg, var(--p1), #ffffff 45%, var(--c1) 100%);
+      line-height:1.7;
+    }
+    a{color:var(--g3); text-decoration:none}
+    img{max-width:100%; display:block}
+
+    .container{max-width:var(--max); margin:0 auto; padding:24px}
+    .grid{display:grid; gap:28px}
+    .two{grid-template-columns:repeat(2, minmax(0,1fr))}
+    .three{grid-template-columns:repeat(3, minmax(0,1fr))}
+    @media (max-width: 960px){ .two,.three{grid-template-columns:1fr} }
+
+    .card{
+      background:#fff; border:1px solid var(--line); border-radius:var(--radius);
+      box-shadow:var(--shadow); padding:24px;
+    }
+    .tag{display:inline-flex; padding:6px 12px; border-radius:999px; font-weight:600; background:var(--c1); color:#0b425e}
+    .btn{
+      display:inline-flex; align-items:center; justify-content:center; gap:.5rem;
+      padding:12px 18px; border-radius:999px; background:var(--g3); color:#fff; font-weight:700;
+      box-shadow:var(--shadow)
+    }
+    .btn.alt{background:#263238}
+    h1,h2,h3{line-height:1.2; margin:.2rem 0}
+    h1{font-size:clamp(28px,4vw,54px)}
+    h2{font-size:clamp(24px,3vw,36px); color:var(--g4)}
+    h3{font-size:clamp(18px,2vw,22px)}
+
+    /* ===== Header / Nav ===== */
+    header{
+      position:sticky; top:0; z-index:50; background:rgba(255,255,255,.85);
+      backdrop-filter:blur(10px); border-bottom:1px solid var(--line)
+    }
+    .nav{display:flex; justify-content:space-between; align-items:center; gap:16px}
+    .brand{display:flex; align-items:center; gap:10px; font-weight:900}
+    .brand .logo{
+      width:42px; height:42px; border-radius:12px; display:grid; place-items:center;
+      background:radial-gradient(120% 120% at 30% 30%, var(--g2) 0%, var(--g3) 70%, var(--g4) 100%);
+      color:#fff; box-shadow:var(--shadow)
+    }
+    nav a{padding:10px 14px; border-radius:10px; color:#111}
+    nav a:hover{background:var(--c2); color:#083a2a}
+
+    /* ===== Hero ===== */
+    .hero{padding:56px 0}
+    .hero .lead{font-size:clamp(16px,2vw,20px); color:var(--muted)}
+    .hero-visual{
+      aspect-ratio: 16/11; border-radius:var(--radius);
+      background:
+        radial-gradient(70% 70% at 18% 24%, rgba(158,214,124,.35), transparent 60%),
+        radial-gradient(70% 70% at 80% 18%, rgba(201,229,231,.55), transparent 70%),
+        linear-gradient(180deg, #fff, #F1FFF4);
+      border:1px solid var(--line); position:relative; overflow:hidden
+    }
+    .bubble{position:absolute; border-radius:999px; background:rgba(255,255,255,.9); border:1px solid #dbeafe; box-shadow:var(--shadow)}
+    .b1{width:120px; height:120px; left:10%; top:18%}
+    .b2{width:80px; height:80px; right:14%; top:14%}
+    .b3{width:150px; height:150px; right:16%; bottom:8%}
+    .leaf{position:absolute; left:20%; top:26%; width:30px; height:30px; background:var(--g2); transform: rotate(-22deg);
+      clip-path: path("M12 0C20 4 24 12 22 18 18 24 8 24 2 18 0 10 6 2 12 0Z")}
+
+    /* ===== Secciones ===== */
+    .section{padding:60px 0}
+    .list{margin:10px 0 0; padding:0; list-style:none}
+    .list li{display:flex; gap:10px; align-items:flex-start; padding:6px 0}
+    .check{
+      width:18px; height:18px; border-radius:4px; background:var(--g3);
+      display:inline-grid; place-items:center; color:#fff; font-size:12px; line-height:1
+    }
+
+    /* ===== Placeholders de imagen ===== */
+    .img-slot{
+      aspect-ratio: 16/10; border:2px dashed var(--c2); border-radius:14px;
+      background:linear-gradient(135deg, var(--p1), #ffffff);
+      display:grid; place-items:center; color:#0b425e; font-weight:700
+    }
+    .square{aspect-ratio:1/1}
+
+    /* ===== Merch ===== */
+    .product{display:flex; flex-direction:column; gap:14px}
+    .price{font-weight:800; color:var(--g4)}
+
+    /* ===== Contacto ===== */
+    .contact{
+      display:grid; gap:18px;
+      grid-template-columns:repeat(2, minmax(0,1fr));
+    }
+    @media (max-width: 900px){ .contact{grid-template-columns:1fr} }
+    .social{display:flex; flex-wrap:wrap; gap:10px}
+    .chip{display:inline-flex; align-items:center; gap:8px; padding:8px 12px; border-radius:999px; font-weight:600;
+      background:var(--c2); color:#083a2a; border:1px solid #9bd7df}
+    .chip svg{width:16px; height:16px}
+
+    /* ===== Footer ===== */
+    footer{border-top:1px solid var(--line); padding:28px 0; color:var(--muted); font-size:.95rem; background:#fff}
+  </style>
+</head>
+<body>
+
+  <!-- ===== Header ===== -->
+  <header>
+    <div class="container nav">
+      <div class="brand">
+        <img src="logotipo.png" alt="Sin Huella" style="height:50px;">
+        SIN HUELLA
+      </div>
+      <nav>
+        <a href="#somos">Quiénes somos</a>
+        <a href="#producto">Producto</a>
+        <a href="#tienda">Tienda online</a>
+        <a href="#contacto">Contacto</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ===== Hero ===== -->
+  <section class="hero">
+    <div class="container grid two">
+      <div>
+        <span class="tag">Limpieza 2 en 1 · Sin plástico</span>
+        <h1>Esponja Jabón 2 en 1 Ecológica</h1>
+        <p class="lead">
+          Limpia mejor y cuida el planeta. Fibras de coco + jabón sólido 100% natural
+          que se activa con agua. Sin químicos agresivos, sin envases plásticos, sin huella.
+        </p>
+        <div style="display:flex; gap:12px; flex-wrap:wrap; margin-top:14px">
+          <a class="btn" href="#producto">Conoce el producto</a>
+          <a class="btn alt" href="#tienda">Ver merchandising</a>
+        </div>
+      </div>
+      <div class="hero-visual" aria-label="Área para imagen/ilustración del producto">
+        <div class="bubble b1"></div>
+        <div class="bubble b2"></div>
+        <div class="bubble b3"></div>
+        <div class="leaf"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Quiénes somos ===== -->
+  <section id="somos" class="section">
+    <div class="container grid two">
+      <div class="card">
+        <h2>Quiénes somos</h2>
+        <p><strong>Misión.</strong> Nuestra misión como empresa <em>“SIN HUELLA”</em> es proporcionar soluciones de limpieza con mayor efectividad que vayan de la mano con el medio ambiente, ofreciendo alta calidad y responsabilidad social en el producto.</p>
+        <p><strong>Visión.</strong> Ser una empresa líder en la elaboración de esponjas lava trastes y la preferida de las amas de casa en el país, reconocida por innovación, calidad y eficacia, mejorando la vida diaria de nuestros consumidores para el año 2030.</p>
+
+        <h3 style="margin-top:14px">Valores</h3>
+        <ul class="list">
+          <li><span class="check">✓</span> <strong>Responsabilidad:</strong> Uso sostenible de recursos naturales, reducción de contaminación y prácticas para un mejor entorno a futuro.</li>
+          <li><span class="check">✓</span> <strong>Sostenibilidad:</strong> Permanecer en el tiempo sin explotar los recursos.</li>
+          <li><span class="check">✓</span> <strong>Respeto:</strong> Proteger el patrimonio ambiental para generaciones presentes y futuras.</li>
+          <li><span class="check">✓</span> <strong>Ética:</strong> Las ganancias nunca por encima de la salud ambiental.</li>
+          <li><span class="check">✓</span> <strong>Colaboración:</strong> Sumamos esfuerzos y alianzas con empresas comprometidas con el medio ambiente.</li>
+        </ul>
+      </div>
+
+      <aside class="card">
+        <h3>Imagen institucional</h3>
+        <div class="img-slot" aria-label="Sube aquí una imagen del equipo o marca">Área para imagen</div>
+        <p style="color:var(--muted); margin-top:10px">Sugerencia: fotografía del equipo o de procesos sostenibles.</p>
+      </aside>
+    </div>
+  </section>
+
+  <!-- ===== El producto ===== -->
+  <section id="producto" class="section" style="background:linear-gradient(180deg, #ffffff, var(--c1) 100%)">
+    <div class="container grid two">
+      <article class="card">
+        <h2>El producto</h2>
+        <p>
+          Imagina tener en tus manos una esponja que no solo limpia, sino que también cuida de ti y del planeta.
+          Así nace la <strong>Esponja Jabón 2 en 1 Ecológica</strong>, una idea práctica que une lo mejor de la naturaleza en un solo producto.
+        </p>
+        <p>
+          Por un lado, sus <strong>fibras de coco</strong>, firmes y resistentes, retiran la suciedad sin dañar.
+          Por el otro, un <strong>jabón sólido 100% natural</strong> que se activa al mojar la esponja, creando una espuma suave y agradable.
+        </p>
+        <p>
+          No necesitas detergentes líquidos ni envases plásticos: somos <em>libres de plásticos, sin químicos y sin huella ecológica</em>.
+        </p>
+        <p>
+          Nuestro propósito: <strong>simplificar la limpieza</strong> integrando esponja y jabón en un solo producto, haciéndola práctica y efectiva
+          mientras promueve hábitos responsables con el medio ambiente.
+        </p>
+      </article>
+
+      <aside class="card">
+        <h3>Imagen del producto</h3>
+        <div class="img-slot" aria-label="Coloca aquí la foto/Render de la Esponja Jabón 2 en 1">Área para imagen 16:10</div>
+        <div class="grid two" style="margin-top:14px">
+          <div class="img-slot square" aria-label="Detalle de fibras de coco">Detalle</div>
+          <div class="img-slot square" aria-label="Detalle del jabón sólido">Detalle</div>
+        </div>
+        <p style="color:var(--muted); margin-top:10px">Consejo: usa fotos con fondo claro para armonizar con la paleta.</p>
+      </aside>
+    </div>
+  </section>
+
+  <!-- ===== Tienda online (merchandising) ===== -->
+  <section id="tienda" class="section">
+    <div class="container">
+      <h2>Tienda online · Merchandising</h2>
+      <p class="tag" style="margin:6px 0 18px">Colección SIN HUELLA</p>
+
+      <div class="grid three">
+        <div class="card product">
+          <div class="img-slot square" aria-label="Mochila Sin Huella">Mochila</div>
+          <h3>Mochila Sin Huella</h3>
+          <p>Resistente, práctica y con diseño ecológico para acompañarte en tu día a día.</p>
+          <span class="price">$— MXN</span>
+          <a class="btn" href="#">Ver producto</a>
+        </div>
+
+        <div class="card product">
+          <div class="img-slot square" aria-label="Bitácora Verde">Bitácora</div>
+          <h3>Bitácora Verde</h3>
+          <p>Libreta ecológica para plasmar tus ideas con estilo y conciencia ambiental.</p>
+          <span class="price">$— MXN</span>
+          <a class="btn" href="#">Ver producto</a>
+        </div>
+
+        <div class="card product">
+          <div class="img-slot square" aria-label="EcoCase Sin Huella">EcoCase</div>
+          <h3>EcoCase Sin Huella</h3>
+          <p>Funda protectora sustentable que cuida tu celular y el planeta.</p>
+          <span class="price">$— MXN</span>
+          <a class="btn" href="#">Ver producto</a>
+        </div>
+
+        <div class="card product">
+          <div class="img-slot square" aria-label="Botella Sin Huella">Botella</div>
+          <h3>Botella Sin Huella</h3>
+          <p>Reutilizable, ligera y libre de plásticos de un solo uso.</p>
+          <span class="price">$— MXN</span>
+          <a class="btn" href="#">Ver producto</a>
+        </div>
+
+        <div class="card product">
+          <div class="img-slot square" aria-label="EcoBag Sin Huella">EcoBag</div>
+          <h3>EcoBag Sin Huella</h3>
+          <p>Bolsa de tela sustentable para reemplazar bolsas plásticas en tus compras.</p>
+          <span class="price">$— MXN</span>
+          <a class="btn" href="#">Ver producto</a>
+        </div>
+
+        <div class="card product">
+          <div class="img-slot square" aria-label="Sudadera Sin Huella">Sudadera</div>
+          <h3>Sudadera Sin Huella</h3>
+          <p>Cómoda, moderna y amigable con el ambiente, diseñada para vestir con propósito.</p>
+          <span class="price">$— MXN</span>
+          <a class="btn" href="#">Ver producto</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Contacto ===== -->
+  <section id="contacto" class="section" style="background:linear-gradient(180deg, var(--c1), #ffffff)">
+    <div class="container contact">
+      <div class="card">
+        <h2>Contacto</h2>
+        <p>¿Tienes preguntas o deseas comprar al por mayor? Escríbenos.</p>
+        <p><strong>Email:</strong> <a href="mailto:hola@sinhhuella.mx">hola@sinhhuella.mx</a></p>
+        <p><strong>WhatsApp:</strong> <a href="https://wa.me/521000000000">+52 1 000 000 0000</a></p>
+        <div class="social" style="margin-top:10px">
+          <a class="chip" href="#" aria-label="Instagram">
+            <!-- ícono simple -->
+            <svg viewBox="0 0 24 24" fill="none"><rect x="3" y="3" width="18" height="18" rx="5" stroke="#083a2a"/><circle cx="12" cy="12" r="4" stroke="#083a2a"/><circle cx="17.5" cy="6.5" r="1.2" fill="#083a2a"/></svg>
+            Instagram
+          </a>
+          <a class="chip" href="#" aria-label="Facebook">
+            <svg viewBox="0 0 24 24" fill="none"><path d="M14 9h2V6h-2c-1.7 0-3 1.3-3 3v2H9v3h2v6h3v-6h2.1l.9-3H14V9Z" stroke="#083a2a"/></svg>
+            Facebook
+          </a>
+          <a class="chip" href="#" aria-label="TikTok">
+            <svg viewBox="0 0 24 24" fill="none"><path d="M14 4v8.5a3.5 3.5 0 1 1-3-3.45" stroke="#083a2a"/><path d="M14 6c1.2 1.9 3.2 3 5.4 3" stroke="#083a2a"/></svg>
+            TikTok
+          </a>
+        </div>
+      </div>
+
+      <aside class="card">
+        <h3>Ubicación / Imagen de contacto</h3>
+        <div class="img-slot" aria-label="Mapa o imagen de contacto">Área para imagen</div>
+        <p style="color:var(--muted); margin-top:8px">Sugerencia: mapa, showroom o fotografía de atención al cliente.</p>
+      </aside>
+    </div>
+  </section>
+
+  <!-- ===== Footer ===== -->
+  <footer>
+    <div class="container" style="display:flex; justify-content:space-between; flex-wrap:wrap; gap:12px">
+      <div>© <span id="y"></span> SIN HUELLA · Hecho con responsabilidad ambiental</div>
+      <div style="display:flex; gap:12px">
+        <a href="#">Privacidad</a>
+        <a href="#">Términos</a>
+        <a href="#">Devoluciones</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Año dinámico
+    document.getElementById('y').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
