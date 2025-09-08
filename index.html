@@ -5,10 +5,12 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>SIN HUELLA · Limpieza consciente</title>
   <meta name="description" content="Esponja Jabón 2 en 1 ecológica y merchandising SIN HUELLA. Misión, visión y valores orientados a la sostenibilidad." />
-<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+
+  <!-- Fuente Great Vibes para el título -->
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
 
   <style>
-    /* ===== Paleta (imagen adjunta) ===== */
+    /* ===== Paleta ===== */
     :root{
       --g1:#9ED67C;   /* verde claro */
       --g2:#7EB658;   /* verde medio */
@@ -67,75 +69,19 @@
       backdrop-filter:blur(10px); border-bottom:1px solid var(--line)
     }
     .nav{display:flex; justify-content:space-between; align-items:center; gap:16px}
-    .brand{display:flex; align-items:center; gap:10px; font-weight:900}
-    .brand .logo{
-      width:42px; height:42px; border-radius:12px; display:grid; place-items:center;
-      background:radial-gradient(120% 120% at 30% 30%, var(--g2) 0%, var(--g3) 70%, var(--g4) 100%);
-      color:#fff; box-shadow:var(--shadow)
+    .brand{display:flex; align-items:center; gap:10px}
+
+    /* Aquí aplicamos la fuente Great Vibes */
+    .brand-title{
+      font-family: "Great Vibes", cursive;
+      font-size: clamp(26px, 3.2vw, 40px);
+      color: var(--g4);
+      line-height: 1;
+      letter-spacing: .5px;
     }
+
     nav a{padding:10px 14px; border-radius:10px; color:#111}
     nav a:hover{background:var(--c2); color:#083a2a}
-
-    /* ===== Hero ===== */
-    .hero{padding:56px 0}
-    .hero .lead{font-size:clamp(16px,2vw,20px); color:var(--muted)}
-    .hero-visual{
-      aspect-ratio: 16/11; border-radius:var(--radius);
-      background:
-        radial-gradient(70% 70% at 18% 24%, rgba(158,214,124,.35), transparent 60%),
-        radial-gradient(70% 70% at 80% 18%, rgba(201,229,231,.55), transparent 70%),
-        linear-gradient(180deg, #fff, #F1FFF4);
-      border:1px solid var(--line); position:relative; overflow:hidden
-    }
-    .bubble{position:absolute; border-radius:999px; background:rgba(255,255,255,.9); border:1px solid #dbeafe; box-shadow:var(--shadow)}
-    .b1{width:120px; height:120px; left:10%; top:18%}
-    .b2{width:80px; height:80px; right:14%; top:14%}
-    .b3{width:150px; height:150px; right:16%; bottom:8%}
-    .leaf{position:absolute; left:20%; top:26%; width:30px; height:30px; background:var(--g2); transform: rotate(-22deg);
-      clip-path: path("M12 0C20 4 24 12 22 18 18 24 8 24 2 18 0 10 6 2 12 0Z")}
-
-    /* ===== Secciones ===== */
-    .section{padding:60px 0}
-    .list{margin:10px 0 0; padding:0; list-style:none}
-    .list li{display:flex; gap:10px; align-items:flex-start; padding:6px 0}
-    .check{
-      width:18px; height:18px; border-radius:4px; background:var(--g3);
-      display:inline-grid; place-items:center; color:#fff; font-size:12px; line-height:1
-    }
-
-    /* ===== Placeholders de imagen ===== */
-    .img-slot{
-      aspect-ratio: 16/10; border:2px dashed var(--c2); border-radius:14px;
-      background:linear-gradient(135deg, var(--p1), #ffffff);
-      display:grid; place-items:center; color:#0b425e; font-weight:700
-    }
-    .square{aspect-ratio:1/1}
-
-    /* ===== Merch ===== */
-    .product{display:flex; flex-direction:column; gap:14px}
-    .price{font-weight:800; color:var(--g4)}
-
-    /* ===== Contacto ===== */
-    .contact{
-      display:grid; gap:18px;
-      grid-template-columns:repeat(2, minmax(0,1fr));
-    }
-    @media (max-width: 900px){ .contact{grid-template-columns:1fr} }
-    .social{display:flex; flex-wrap:wrap; gap:10px}
-    .chip{display:inline-flex; align-items:center; gap:8px; padding:8px 12px; border-radius:999px; font-weight:600;
-      background:var(--c2); color:#083a2a; border:1px solid #9bd7df}
-   .chip svg{width:16px; height:16px}
-
-    /* ===== Imágenes dentro de tarjetas ===== */
-    .card img{
-      display:block;
-      margin-inline:auto;
-      width:100%;
-      height:auto;
-      object-fit:contain;
-      border-radius:12px;
-      box-shadow:0 4px 12px rgba(0,0,0,.1);
-    }
 
     /* ===== Footer ===== */
     footer{border-top:1px solid var(--line); padding:28px 0; color:var(--muted); font-size:.95rem; background:#fff}
@@ -148,7 +94,7 @@
     <div class="container nav">
       <div class="brand">
         <img src="logotipo.png" alt="Sin Huella" style="height:50px;">
-        SIN HUELLA
+        <span class="brand-title">Sin Huella</span>
       </div>
       <nav>
         <a href="#somos">Quiénes somos</a>
